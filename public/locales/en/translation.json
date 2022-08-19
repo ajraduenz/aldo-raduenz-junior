@@ -1,0 +1,39 @@
+{
+  "mySkills": {
+    "title":"My Skills"
+  },
+  "aboutMe": {
+    "title":"About me",
+    "description":"Front-end developer, HTML/CSS/Javascript React.js Next.js, with emphasis on performance, SEO, and user experience. Knowledge in integration with API's, Websocket, JSON, DOM manipulation, JWT and Object."
+  },
+  "experience": {
+    "title":"Professional Experience",      
+    "meat": {
+      "title":"Me.At - 2021 - Now",
+      "description":"React, Next.js Javascript, Typeorm, Tailwind CSS, Socket.io development in Israeli IoT startup. Working with, Slack, Monday, git version control, task control, Scrum, communication in English through meet and messages"
+    },
+    "sottile": {
+      "title":"E-commerce Sottile Casa - 2020-2021",
+      "description":"Web development, HTML CSS and Javascript, UX/UI Design, Landing Pages, SEO adjusts, blog maintenance, API's creation, working with kanban, github and Monday"
+    },
+    "freelance": {
+      "title":"Web developer Freelancer - 2017-2020",
+      "description":"Web development, HTML CSS and Javascript, React, site creation, tools, dashboards, zoom's galleries, implementation of improvements, assembly of virtual stores in Tray, Integrated Store, PHP development in WooCommerce, Wordpress and Node.js."
+    },
+    "karsten": {
+      "title":"Karsten - 2013-2017",
+      "description":"Creation of advanced Excel spreadsheets and VBA, sales forecast"
+    }  
+  },
+  "qualifications":{
+    "title":"Qualifications and additional informations",
+    "qualification":[
+      "Bachelor in Information Systems, ESAB - 2018 - 2022",
+      "Course 'Modern Web', Cod3r - 80 hours",
+      "Course Front-end, React, Vue.js, UX/UI Design, Tipografy, Origamid - 250 hours",
+      "Course 'Digital Marketing', iMedia - 18 hours"   
+    ]
+    
+  },
+  "someWorks":"Some Works"
+}

@@ -8,6 +8,8 @@ import Title from "./components/title";
 import AditionalInformation from "./components/AditionalInformation";
 import Link from "next/link";
 
+import { useTranslation } from "react-i18next";
+
 const mySkills: {
   title: string;
   experience: number;
@@ -69,7 +71,7 @@ const someWorks: {
       link: "https://etiquetas.netlify.app/",
       description: "",
     },
-   
+
     { title: "Aj Raduenz", link: "https://ajraduenz.com/", description: "" },
     {
       title: "Blog Sottile",
@@ -79,10 +81,11 @@ const someWorks: {
   ],
 };
 const Main = () => {
+  const { t } = useTranslation();
   return (
     <main className="w-full flex-1">
       <Section>
-        <Title title="My skills" />
+        <Title title={t("mySkills.title")} />
         <Content>
           {mySkills.map((skill, index) => {
             return <Skill title={skill.title} key={index} />;
@@ -90,54 +93,38 @@ const Main = () => {
         </Content>
       </Section>
       <Section>
-        <Title title="About me" />
+        <Title title={t("aboutMe.title")} />
         <Content>
-          <p>{aboutMe}</p>
+          <p>{t("aboutMe.description")}</p>
         </Content>
       </Section>
       <Section>
-        <Title title="Professional Experience" />
+        <Title title={t("experience.title")} />
         <Content>
           <div>
-            <Subtitle title="Me.At - 2021 - Now" />
-            <Paragraph
-              content={`React, Next.js Javascript, Typeorm, Tailwind CSS, Socket.io
-              development in Israeli IoT startup. Working with, Slack, Monday,
-              git version control, task control, Scrum, communication in English
-              through meet and messages`}
-            />
-            <Subtitle title="E-commerce Sottile Casa - 2020-2021" />
-            <Paragraph
-              content={`Web development, HTML CSS and Javascript, UX/UI Design, Landing
-              Pages, SEO adjusts, blog maintenance, API's creation, working with
-              kanban, github and Monday`}
-            />
-            <Subtitle title="Web developer Freelancer - 2017-2020" />
-            <Paragraph
-              content={`Web development, HTML CSS and Javascript, React, site creation,
-              tools, dashboards, zoom's galleries, implementation of
-              improvements, assembly of virtual stores in Tray, Integrated
-              Store, PHP development in WooCommerce, Wordpress and Node.js.`}
-            />
-            <Subtitle title="Karsten - 2013-2017" />
-            <Paragraph
-              content={`Creation of advanced Excel spreadsheets and VBA, sales forecast`}
-            />
+            <Subtitle title={t("experience.meat.title")} />
+            <Paragraph content={t("experience.meat.description")} />
+            <Subtitle title={t("experience.sottile.title")} />
+            <Paragraph content={t("experience.sottile.description")} />
+            <Subtitle title={t("experience.freelance.title")} />
+            <Paragraph content={t("experience.freelance.description")} />
+            <Subtitle title={t("experience.karsten.title")} />
+            <Paragraph content={t("experience.karsten.description")} />
           </div>
         </Content>
       </Section>
       <Section>
-        <Title title={qualifications.title} />
+        <Title title={t("qualifications.title")} />
         <Content>
           <div>
             {qualifications.name.map((name, index: number) => {
-              return <AditionalInformation key={index} title={name} />;
+              return <AditionalInformation key={index} title={t("qualifications.qualification."+index)} />;
             })}
           </div>
         </Content>
       </Section>
       <Section>
-        <Title title={someWorks.title} />
+        <Title title={t("someWorks")} />
         <Content>
           <div>
             {someWorks.work.map((work, index: number) => {
@@ -146,7 +133,9 @@ const Main = () => {
                   <Link href={work.link}>
                     <a className="underline">{work.title}</a>
                   </Link>
-                  {work.description && <span className="block mx-4">{work.description} </span>}
+                  {work.description && (
+                    <span className="block mx-4">{work.description} </span>
+                  )}
                 </div>
               );
             })}
