@@ -8,6 +8,9 @@ import Title from "./components/title";
 import AditionalInformation from "./components/AditionalInformation";
 import Link from "next/link";
 
+
+
+
 import { useTranslation } from "react-i18next";
 
 const mySkills: {
@@ -81,7 +84,8 @@ const someWorks: {
   ],
 };
 const Main = () => {
-  const { t } = useTranslation();
+ const { t } = useTranslation();
+
   return (
     <main className="w-full flex-1">
       <Section>
