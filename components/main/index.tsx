@@ -7,11 +7,8 @@ import Subtitle from "./components/Subtitle";
 import Title from "./components/title";
 import AditionalInformation from "./components/AditionalInformation";
 import Link from "next/link";
-
-
-
-
-import { useTranslation } from "react-i18next";
+import { portuguese } from "../translation/br/translation";
+import { english } from "../translation/en/translation";
 
 const mySkills: {
   title: string;
@@ -83,59 +80,72 @@ const someWorks: {
     },
   ],
 };
-const Main = () => {
- const { t } = useTranslation();
+
+interface Props {
+  language: string;
+}
+
+const Main = ({ language }: Props) => {
+  const actualLanguage = language === "en" ? english : portuguese;
 
   return (
     <main className="w-full flex-1">
       <Section>
-        <Title title={t("mySkills.title")} />
+        <Title title={actualLanguage.mySkills.title} />
         <Content>
-          {mySkills.map((skill, index) => {
+          {actualLanguage.mySkills.skills.map((skill, index) => {
             return <Skill title={skill.title} key={index} />;
           })}
         </Content>
       </Section>
       <Section>
-        <Title title={t("aboutMe.title")} />
+        <Title title={actualLanguage.aboutMe.title} />
         <Content>
-          <p>{t("aboutMe.description")}</p>
+          <p>{actualLanguage.aboutMe.description}</p>
         </Content>
       </Section>
       <Section>
-        <Title title={t("experience.title")} />
+        <Title title={actualLanguage.experience.title} />
         <Content>
           <div>
-            <Subtitle title={t("experience.meat.title")} />
-            <Paragraph content={t("experience.meat.description")} />
-            <Subtitle title={t("experience.sottile.title")} />
-            <Paragraph content={t("experience.sottile.description")} />
-            <Subtitle title={t("experience.freelance.title")} />
-            <Paragraph content={t("experience.freelance.description")} />
-            <Subtitle title={t("experience.karsten.title")} />
-            <Paragraph content={t("experience.karsten.description")} />
+            <Subtitle title={actualLanguage.experience.meat.title} />
+            <Paragraph content={actualLanguage.experience.meat.description} />
+            <Subtitle title={actualLanguage.experience.sottile.title} />
+            <Paragraph
+              content={actualLanguage.experience.sottile.description}
+            />
+            <Subtitle title={actualLanguage.experience.freelance.title} />
+            <Paragraph
+              content={actualLanguage.experience.freelance.description}
+            />
+            <Subtitle title={actualLanguage.experience.karsten.title} />
+            <Paragraph
+              content={actualLanguage.experience.karsten.description}
+            />
           </div>
         </Content>
       </Section>
       <Section>
-        <Title title={t("qualifications.title")} />
+        <Title title={actualLanguage.qualifications.title} />
         <Content>
           <div>
-            {qualifications.name.map((name, index: number) => {
-              return <AditionalInformation key={index} title={t("qualifications.qualification."+index)} />;
-            })}
+            {actualLanguage.qualifications.qualification.map(
+              (name, index: number) => {
+                return <AditionalInformation key={index} title={name} />;
+              },
+            )}
           </div>
         </Content>
       </Section>
       <Section>
-        <Title title={t("someWorks")} />
+        <Title title={actualLanguage.someWorks.title} />
         <Content>
-          <div>
-            {someWorks.work.map((work, index: number) => {
+          <div className="w-full">
+            {actualLanguage.someWorks.work.map((work, index: number) => {
               return (
-                <div className="my-1" key={index}>
+                <div className="my-1 flex w-full" key={index}>
                   <Link href={work.link}>
-                    <a className="underline">{work.title}</a>
+                    <a className="underline w-1/5">{work.title}</a>
                   </Link>
                   {work.description && (
                     <span className="block mx-4">{work.description} </span>

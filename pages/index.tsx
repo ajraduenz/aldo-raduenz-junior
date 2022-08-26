@@ -1,12 +1,12 @@
+import React from "react";
 import type { NextPage } from "next";
 import Head from "next/head";
-import Footer from "../components/footer";
 import Header from "../components/header";
 import Main from "../components/main";
 import Separator from "../components/main/components/separator";
 
 const Home: NextPage = () => {
-
+  const [language, setLanguage] = React.useState<string>("en");
   return (
     <div className="w-full h-screen flex flex-col items-center py-8 px-4 max-w-5xl mx-auto">
       <Head>
@@ -17,10 +17,9 @@ const Home: NextPage = () => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header />
+      <Header language={language} setLanguage={setLanguage} />
       <Separator />
-      <Main />
-      <Footer />
+      <Main language={language} />
     </div>
   );
 };

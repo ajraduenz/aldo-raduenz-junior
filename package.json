@@ -13,6 +13,7 @@
     "i18next-browser-languagedetector": "^6.1.5",
     "i18next-http-backend": "^1.4.1",
     "next": "12.2.5",
+    "next-i18next": "^11.3.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-i18next": "^11.18.4"
