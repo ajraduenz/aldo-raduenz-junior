@@ -144,5 +144,13 @@ export const portuguese = {
               description: "https://ajraduenz.com/"
           },          
       ]
-  }
+  },
+  "contact": {
+    title: "Contato",
+    email: "contato@ajraduenz.com",
+    linkedin: "https://www.linkedin.com/in/aldo-raduenz-junior-4a6011193/",
+    instagram: "https://www.instagram.com/aldoradjr",
+    github: "https://github.com/ajraduenz",
+    city: "Pomerode - Santa Catarina - Brasil"
+}
 }

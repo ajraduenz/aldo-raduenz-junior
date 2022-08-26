@@ -38,49 +38,6 @@ emphasis on performance, SEO, and user experience. Knowledge in
 integration with API's, Websocket, JSON, DOM manipulation, JWT and
 Object.`;
 
-const qualifications: {
-  title: string;
-  name: string[];
-} = {
-  title: "Qualifications and additional informations",
-  name: [
-    "Bachelor in Information Systems, ESAB - 2018 - 2022;",
-    "Course 'Modern Web', Cod3r - 80 hours;",
-    "Course Front-end, React, Vue.js, UX/UI Design, Tipografy, Origamid - 250 hours;",
-    "Course 'Digital Marketing', iMedia - 18 hours;",
-  ],
-};
-const someWorks: {
-  title: string;
-  work: { title: string; link: string; description?: string }[];
-} = {
-  title: "Some Works",
-  work: [
-    {
-      title: "Me@",
-      link: "https://me.at",
-      description: "Access https://me.at/tv and https://me.at then digit OTP",
-    },
-    {
-      title: "Wines",
-      link: "https://plugwine-admin.netlify.app/",
-      description: "User: Jigger, Password: 123",
-    },
-    {
-      title: "Etg Labels",
-      link: "https://etiquetas.netlify.app/",
-      description: "",
-    },
-
-    { title: "Aj Raduenz", link: "https://ajraduenz.com/", description: "" },
-    {
-      title: "Blog Sottile",
-      link: "https://blog.sottilecasa.com.br/",
-      description: "",
-    },
-  ],
-};
-
 interface Props {
   language: string;
 }
@@ -155,6 +112,16 @@ const Main = ({ language }: Props) => {
             })}
           </div>
         </Content>
+      </Section>
+      <Section>
+        <Title title={actualLanguage.contact.title} />   
+          <div className="w-full mt-4">            
+            <Paragraph content={"— " + actualLanguage.contact.linkedin} />
+            <Paragraph content={"— " + actualLanguage.contact.instagram} />
+            <Paragraph content={"— " + actualLanguage.contact.github} />
+            <Paragraph content={"— " + actualLanguage.contact.email} />
+            <Paragraph content={"— " + actualLanguage.contact.city} />
+          </div>    
       </Section>
     </main>
   );
